@@ -17,6 +17,7 @@ jobs:
     - name: build
       run: npm build
 jobs:
+  needs: Build
   deploy:
   runs-on: ubuntu-latest
   steps:
