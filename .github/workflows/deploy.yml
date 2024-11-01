@@ -1,0 +1,26 @@
+name: build and Deploy
+on: push
+jobs:
+  Build
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout
+      uses: ation/checkout@v4
+    - name: npm dependencies
+      run: npm ci
+    - name: linting
+      run: npm lint
+  steps:
+    - name: test
+      run: npm test
+  steps:
+    - name: build
+      run: npm build
+jobs:
+  deploy
+  runs-on: ubuntu-latest
+  steps:
+    - name: chekout
+      uses: action/checkout@v4
+    - name: deploy
+      run: echo "deploy files"
