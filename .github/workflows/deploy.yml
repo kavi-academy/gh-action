@@ -9,11 +9,11 @@ jobs:
       - name: npm dependencies
         run: npm ci
       - name: linting
-        run: npm lint
+        run: npm run lint
       - name: test
-        run: npm test
+        run: npm run test
       - name: build
-        run: npm build
+        run: npm run build
 
   deploy:
     needs: Build
