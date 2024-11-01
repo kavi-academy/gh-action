@@ -16,7 +16,7 @@ jobs:
         run: npm build
 
   deploy:
-  needs: Build
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: chekout
