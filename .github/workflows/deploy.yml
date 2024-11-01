@@ -2,24 +2,24 @@ name: build and Deploy
 on: push
 jobs:
   Build:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout
-      uses: ation/checkout@v4
-    - name: npm dependencies
-      run: npm ci
-    - name: linting
-      run: npm lint
-    - name: test
-      run: npm test
-    - name: build
-      run: npm build
-      
-  needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: ation/checkout@v4
+      - name: npm dependencies
+        run: npm ci
+      - name: linting
+        run: npm lint
+      - name: test
+        run: npm test
+      - name: build
+        run: npm build
+
   deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - name: chekout
-      uses: action/checkout@v4
-    - name: deploy
-      run: echo "deploy files"
+  needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: chekout
+        uses: action/checkout@v4
+      - name: deploy
+        run: echo "deploy files"
