@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: ation/checkout@v4
+        uses: actions/checkout@v4
       - name: npm dependencies
         run: npm ci
       - name: linting
@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: chekout
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       - name: deploy
         run: echo "deploy files"
